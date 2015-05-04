@@ -206,34 +206,36 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The NYC Subway data is presented as a file of observations with the following variables:</p>
-<p>UNIT - The station entry unit
-DATEn - Date of observation
-TIMEn - Time of observation
-Hour - A numeric from 0-23 indicating the hour of day
-DESCn - The type of entry REGULAR, etc
-ENTRIESn_hourly - Number of entries since previous REGULAR observation
-EXITSn_hourly - Number of exits since previous REGULAR observation
-maxpressurei - Maximum pressure for that day (inches Hg)
-maxdewpti - Maximum dew point for that day (Deg F)
-mindewpti - Minimum dew point for that day (Deg F)
-minpressurei - Minimum pressure for that day (inches Hg)
-meandewpti - Average dew point for the day 
-meanpressurei - Average pressure for the day 
-fog - 0 indicating no fog and 1 fog
-rain - 0 indicating no rain and 1 rain
-meanwindspdi - Average windspeed in mph for that day
-mintempi - Minimum temperature for that day (Deg F)
-meantempi - Average temperature for that day (Deg F)
-maxtempi - Maximum temperature for that day (Deg F)
-precipi - Precipitation in inches at that time
-thunder - 0 for no thunder activity and 1 for thunder</p>
+<ul>
+<li>UNIT - The station entry unit</li>
+<li>DATEn - Date of observation</li>
+<li>TIMEn - Time of observation</li>
+<li>Hour - A numeric from 0-23 indicating the hour of day</li>
+<li>DESCn - The type of entry REGULAR, etc</li>
+<li>ENTRIESn_hourly - Number of entries since previous REGULAR observation</li>
+<li>EXITSn_hourly - Number of exits since previous REGULAR observation</li>
+<li>maxpressurei - Maximum pressure for that day (inches Hg)</li>
+<li>maxdewpti - Maximum dew point for that day (Deg F)</li>
+<li>mindewpti - Minimum dew point for that day (Deg F)</li>
+<li>minpressurei - Minimum pressure for that day (inches Hg)</li>
+<li>meandewpti - Average dew point for the day </li>
+<li>meanpressurei - Average pressure for the day </li>
+<li>fog - 0 indicating no fog and 1 fog</li>
+<li>rain - 0 indicating no rain and 1 rain</li>
+<li>meanwindspdi - Average windspeed in mph for that day</li>
+<li>mintempi - Minimum temperature for that day (Deg F)</li>
+<li>meantempi - Average temperature for that day (Deg F)</li>
+<li>maxtempi - Maximum temperature for that day (Deg F)</li>
+<li>precipi - Precipitation in inches at that time</li>
+<li>thunder - 0 for no thunder activity and 1 for thunder</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[306]:</div>
+<div class="prompt input_prompt">In&nbsp;[342]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#Imports</span>
@@ -265,7 +267,7 @@ Calculating the mean of both samples returns a higher average subway ridership f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[307]:</div>
+<div class="prompt input_prompt">In&nbsp;[343]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Load the enhanced dataset into pandas</span>
@@ -296,7 +298,7 @@ Calculating the mean of both samples returns a higher average subway ridership f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[308]:</div>
+<div class="prompt input_prompt">In&nbsp;[344]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#Show the comparative distribution of the two samples</span>
@@ -538,7 +540,7 @@ i4WZmVVysTAzs0ouFmZmVsnFwszMKv1/2eaxASUERq0AAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[309]:</div>
+<div class="prompt input_prompt">In&nbsp;[345]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">sp_wr</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">rain_days</span><span class="p">)</span>
@@ -582,7 +584,7 @@ i4WZmVVysTAzs0ouFmZmVsnFwszMKv1/2eaxASUERq0AAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This makes Welch's t-test is inappropriate, and we perform a non-parametric <strong>Mann-Whitney U test</strong> instead.</p>
 <p>Because either sample could produce larger results we perform a two-tail Mann-Whitney with an α level = 0.05
-We use the typical null-hypothesis for Mann-Whitney which stipulates that the probality of drawing a random sample from the first population (which is our sample without rain) being larger than a random sample from the second population (in this case our sample with rain) is 0.5. i.e. the populations are identical.</p>
+We use the typical null-hypothesis for Mann-Whitney which stipulates that the probability of drawing a random sample from the first population (which is our sample without rain) being larger than a random sample from the second population (in this case our sample with rain) is 0.5. i.e. the populations are identical.</p>
 <p>Because the models return p-values for a 1-tailed test we are required to double the result for a 2-tailed test</p>
 
 </div>
@@ -601,7 +603,7 @@ We use the typical null-hypothesis for Mann-Whitney which stipulates that the pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[310]:</div>
+<div class="prompt input_prompt">In&nbsp;[346]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">U</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">rain_days</span><span class="p">,</span><span class="n">no_rain_days</span><span class="p">)</span>
@@ -664,7 +666,7 @@ Sample Means - No Rain Days: 1090.279 - Rain Days: 1105.446
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[311]:</div>
+<div class="prompt input_prompt">In&nbsp;[347]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">wdf</span><span class="p">[</span><span class="s">&quot;ENTRIESn_hourly&quot;</span><span class="p">])</span>
@@ -677,7 +679,7 @@ Sample Means - No Rain Days: 1090.279 - Rain Days: 1105.446
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[312]:</div>
+<div class="prompt input_prompt">In&nbsp;[348]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">time</span>
@@ -701,7 +703,7 @@ Sample Means - No Rain Days: 1090.279 - Rain Days: 1105.446
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[313]:</div>
+<div class="prompt input_prompt">In&nbsp;[349]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">normalize_features</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -727,34 +729,7 @@ Sample Means - No Rain Days: 1090.279 - Rain Days: 1105.446
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[314]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Compute the cost function given a set of features / values, </span>
-<span class="sd">    and the values for our thetas.</span>
-<span class="sd">    </span>
-<span class="sd">    This can be the same code as the compute_cost function in the lesson #3 exercises,</span>
-<span class="sd">    but feel free to implement your own.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-    <span class="n">sum_of_square_errors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="n">cost</span> <span class="o">=</span> <span class="n">sum_of_square_errors</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span>
-
-
-    <span class="k">return</span> <span class="n">cost</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[315]:</div>
+<div class="prompt input_prompt">In&nbsp;[350]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">predictions_OLS</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
@@ -791,8 +766,8 @@ Sample Means - No Rain Days: 1090.279 - Rain Days: 1105.446
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Section-2.2">Section 2.2<a class="anchor-link" href="#Section-2.2">&#182;</a></h3><p><strong>What features (input variables) did you use in your model? Did you use any dummy variables as part of your features?</strong>
-Before performing regression we modified the dataset to add two new features:</p>
+<h3 id="Section-2.2">Section 2.2<a class="anchor-link" href="#Section-2.2">&#182;</a></h3><p><strong>What features (input variables) did you use in your model? Did you use any dummy variables as part of your features?</strong></p>
+<p>Before performing regression we modified the dataset to add two new features:</p>
 <ul>
 <li><strong>day_of_week</strong>: This is set to 0 for a Monday through to 6 for a Sunday and derived from <strong>DATEn</strong></li>
 <li><strong>is_weekend</strong>: This is a boolean set to 0 if <strong>day_of_week</strong> in (0,1,2,3,4) and 1 if in (5,6)</li>
@@ -826,7 +801,7 @@ Before performing regression we modified the dataset to add two new features:</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[316]:</div>
+<div class="prompt input_prompt">In&nbsp;[351]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">OLSModel</span> <span class="o">=</span> <span class="n">predictions_OLS</span><span class="p">(</span><span class="n">wdf</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -870,7 +845,7 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[317]:</div>
+<div class="prompt input_prompt">In&nbsp;[352]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">compute_r_squared</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">predictions</span><span class="p">):</span>
@@ -900,7 +875,7 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[318]:</div>
+<div class="prompt input_prompt">In&nbsp;[353]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">print</span> <span class="s">&quot;R^2 - coefficient of determination: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">compute_r_squared</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">preds_OLS</span><span class="p">))</span>
@@ -957,7 +932,7 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[319]:</div>
+<div class="prompt input_prompt">In&nbsp;[354]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1237,7 +1212,7 @@ WZiZWVOuLMzMrClXFmZm1pQrCzMza8qVhZmZNeXKwszMmvr/p7TNg9NZNysAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[320]:</div>
+<div class="prompt input_prompt">In&nbsp;[355]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">plot_weather_data</span><span class="p">(</span><span class="n">turnstile_weather</span><span class="p">):</span>
@@ -1288,7 +1263,7 @@ WZiZWVOuLMzMrClXFmZm1pQrCzMza8qVhZmZNeXKwszMmvr/p7TNg9NZNysAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[321]:</div>
+<div class="prompt input_prompt">In&nbsp;[356]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">plot_weather_data</span><span class="p">(</span><span class="n">wdf</span><span class="p">)</span>
@@ -2230,11 +2205,11 @@ cUHBVERERETigoKpiIiIiMQFBVMRERERiQsKpiIiIiISF/4H6xnY8/wd5QkAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[321]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[356]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;ggplot: (285400989)&gt;</pre>
+<pre>&lt;ggplot: (285940437)&gt;</pre>
 </div>
 
 </div>
@@ -2256,7 +2231,7 @@ As can be seen from the chart above, as the number of entries per hour increases
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[322]:</div>
+<div class="prompt input_prompt">In&nbsp;[357]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">plot_weather_data2</span><span class="p">(</span><span class="n">turnstile_weather</span><span class="p">):</span>
@@ -2305,7 +2280,7 @@ As can be seen from the chart above, as the number of entries per hour increases
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[323]:</div>
+<div class="prompt input_prompt">In&nbsp;[358]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">plot_weather_data2</span><span class="p">(</span><span class="n">wdf</span><span class="p">)</span>
@@ -3084,11 +3059,11 @@ RESkSf8P76/LOqKqWN8AAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[323]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[358]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;ggplot: (279144581)&gt;</pre>
+<pre>&lt;ggplot: (285790481)&gt;</pre>
 </div>
 
 </div>
